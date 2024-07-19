@@ -26,6 +26,7 @@ This theme follows latest GNOME Adwaita style.
 > If you are a software distribution maintainer, please do not ship these changes by default to your users unless you make it extremely clear that they are using a modified version of the Firefox UI.
 
 ![Screenshot of the theme](screenshot.png)
+![screenshot-dark.png](screenshot-dark.png)
 
 ## Description
 
@@ -39,9 +40,38 @@ Matrix room: [#firefox-gnome-theme:matrix.org](https://matrix.to/#/#firefox-gnom
 
 This repo is based on the upstream branch of the [Firefox GNOME theme](https://github.com/rafaelmardojai/firefox-gnome-theme)
 
+# Requirements
+
+You must apply those requierements before installing the theme.
+
+## Install Sidebery Extension
+
+This theme is meant to be used with [Sidebery](https://github.com/mbnuqw/sidebery) extension, as it brings vertical navigation like in Arc Browser.
+
+You can find the extension of the add-on store or click [here](https://addons.mozilla.org/firefox/addon/sidebery/).
+
+## Recommanded navbar layout
+
+For a conformable usage, we recommend you to set up your navbar layout like following:
+
+1. Panel sidebar
+2. Back & forward buttons
+3. Refresh button
+4. Spacer
+5. URL bar
+6. Spacer
+7. Downloads
+8. Extensions
+9. Context menu
+
+![recommanded-navbar-layout.png](recommanded-navbar-layout.png)
+
 # Installation
 
 ## Package managers
+
+> [!NOTE]
+> Not planned
 
 ## One command install with curl
 
@@ -182,22 +212,6 @@ You should already have this file installed if you followed one of the installat
 	This preference is required to recolor the icons, otherwise you will get black icons everywhere.
 
 > For other non essential preferences checkout `configuration/user.js`.
-
-### Recommanded navbar layout
-
-For a conformable usage, we recommend you to set up your navbar layout like following:
-
-1. Panel sidebar
-2. Back & forward buttons 
-3. Refresh button 
-4. Spacer 
-5. URL bar 
-6. Spacer 
-7. Downloads 
-8. Extensions 
-9. Context menu
-
-![recommanded-navbar-layout.png](recommanded-navbar-layout.png)
 
 ## Updating
 
