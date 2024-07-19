@@ -1,6 +1,8 @@
 <img src="icon.svg" alt="Firefox GNOME theme" width="128" align="left"/>
 
-# Firefox GNOME theme
+# Arc GNOME theme
+
+Based on [Firefox GNOME theme](https://github.com/rafaelmardojai/firefox-gnome-theme)
 
 [![GitHub](https://img.shields.io/github/license/rafaelmardojai/firefox-gnome-theme.svg)](https://github.com/rafaelmardojai/firefox-gnome-theme/blob/master/LICENSE)
 [![Donate](https://img.shields.io/badge/PayPal-Donate-gray.svg?style=flat&logo=paypal&colorA=0071bb&logoColor=fff)](https://paypal.me/RafaelMardojaiCM)
@@ -8,9 +10,14 @@
 
 <br>
 
-**A GNOME theme for Firefox**
+**A GNOME theme for Firefox inspired by Arc Browser**
 
 This theme follows latest GNOME Adwaita style.
+
+> [!CAUTION]
+> This is currently a personal project, so I'm not planning to actively contribute for now.
+> 
+> This theme may contain bug, feel free to report them!
 
 > [!WARNING]
 > ### Disclaimer:
@@ -22,7 +29,7 @@ This theme follows latest GNOME Adwaita style.
 
 ## Description
 
-This is a bunch of CSS code to make Firefox look closer to GNOME's native apps.
+This is a bunch of CSS code to make Firefox look closer to GNOME's native apps with Arc browser look in mind.
 
 ### Getting in Touch
 
@@ -30,20 +37,11 @@ Matrix room: [#firefox-gnome-theme:matrix.org](https://matrix.to/#/#firefox-gnom
 
 ### Firefox versions support
 
-The `master` branch of this repo supports the current Firefox stable release `128`.
-
-Theme versions compatible with older Firefox releases are preserved as git tags.
-
-We also have the `beta` and `nightly` branches for fixes only applicable to the current Firefox beta and nightly versions.
+This repo is based on the upstream branch of the [Firefox GNOME theme](https://github.com/rafaelmardojai/firefox-gnome-theme)
 
 # Installation
 
 ## Package managers
-
-### Arch Linux
-
-1. Install the [AUR package](https://aur.archlinux.org/packages/firefox-gnome-theme) `firefox-gnome-theme` 
-2. Follow the instructions at `cat /usr/share/doc/firefox-gnome-theme/INSTALL.md`
 
 ## One command install with curl
 
@@ -52,7 +50,7 @@ To install this theme, you can run this command, which uses *curl* to download a
 > **Warning**: Always be careful when running scripts from the Internet.
 
 ```sh
-curl -s -o- https://raw.githubusercontent.com/rafaelmardojai/firefox-gnome-theme/master/scripts/install-by-curl.sh | bash
+curl -s -o- https://raw.githubusercontent.com/Aurnytoraink/arc-gnome-theme/master/scripts/install-by-curl.sh | bash
 ```
 
 ## Installation scripts
@@ -61,17 +59,10 @@ If you want to use other version of the theme than the stable one you can manual
 
 First you need to grab a fresh copy of the theme repository by cloning it with git.
 
-1. Clone this repo and enter folder:
-
-	```sh
-	git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git
-	cd firefox-gnome-theme
-	```
-2. Checkout a git branch or tag if needed, otherwise use `master` and ignore this step.
-	```sh
-	git checkout beta # Set beta branch
-	git checkout v78.1 # Set v78.1 tag
-	```
+```sh
+git clone https://github.com/Aurnytoraink/arc-gnome-theme.git
+cd arc-gnome-theme
+```
 
 This theme provides two installation scripts in addition to the curled one.
 
@@ -146,7 +137,7 @@ git checkout v$(firefox --version | cut -d ' ' -f 3 | cut -d '.' -f 1) # Using F
 5. Clone this repo to a subdirectory:
 
     ```sh
-    git clone https://github.com/rafaelmardojai/firefox-gnome-theme.git
+    git clone https://github.com/Aurnytoraink/arc-gnome-theme.git
     ```
 
 6. Create single-line user CSS files if non-existent or empty (at least one line is needed for `sed`):
@@ -159,15 +150,15 @@ git checkout v$(firefox --version | cut -d ' ' -f 3 | cut -d '.' -f 1) # Using F
 7. Import this theme at the beginning of the CSS files (all `@import`s must come before any existing `@namespace` declarations):
 
     ```sh
-    sed -i '1s/^/@import "firefox-gnome-theme\/userChrome.css";\n/' userChrome.css
-    sed -i '1s/^/@import "firefox-gnome-theme\/userContent.css";\n/' userContent.css
+    sed -i '1s/^/@import "arc-gnome-theme\/userChrome.css";\n/' userChrome.css
+    sed -i '1s/^/@import "arc-gnome-theme\/userContent.css";\n/' userContent.css
     ```
 
 8. Symlink preferences file:
 
     ```sh
     cd .. # Go back to the profile directory
-    ln -fs chrome/firefox-gnome-theme/configuration/user.js user.js
+    ln -fs chrome/arc-gnome-theme/configuration/user.js user.js
     ```
 
 9. Restart Firefox.
@@ -191,6 +182,22 @@ You should already have this file installed if you followed one of the installat
 	This preference is required to recolor the icons, otherwise you will get black icons everywhere.
 
 > For other non essential preferences checkout `configuration/user.js`.
+
+### Recommanded navbar layout
+
+For a conformable usage, we recommend you to set up your navbar layout like following:
+
+1. Panel sidebar
+2. Back & forward buttons 
+3. Refresh button 
+4. Spacer 
+5. URL bar 
+6. Spacer 
+7. Downloads 
+8. Extensions 
+9. Context menu
+
+![recommanded-navbar-layout.png](recommanded-navbar-layout.png)
 
 ## Updating
 
@@ -339,7 +346,7 @@ Feel free to use any parts of my code to develop your own themes, I don't force
 any specific license on your code.
 
 ## Credits
-Developed by **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and [contributors](https://github.com/rafaelmardojai/firefox-gnome-theme/graphs/contributors). Based on **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**'s original work.
+Developed by **[Rafael Mardojai CM](https://github.com/rafaelmardojai)** and [contributors](https://github.com/Aurnytoraink/arc-gnome-theme/graphs/contributors). Based on **[Luna Kurame](https://github.com/lunakurame/firefox-gnome-theme)**'s original work.
 
 ## Donate
 If you want to support development, consider donating via [PayPal](https://paypal.me/RafaelMardojaiCM). Also consider donating upstream, [Firefox](https://donate.mozilla.org/) & [GNOME](https://www.gnome.org/support-gnome/).

@@ -1,0 +1,36 @@
+/* ----------------------- SIDEBERY -------------------------- */
+
+@-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html"){
+    body {
+        --s-frame-bg: var(--gnome-toolbar-background) !important;
+        --s-frame-fg: rgb(50, 50, 50);
+        --s-toolbar-bg: var(--gnome-toolbar-background) !important;
+        --s-toolbar-fg: rgb(50, 50, 50);
+        --s-act-el-bg: var(--gnome-toolbar-background) !important;
+        --s-act-el-fg: rgb(50, 50, 50);
+        --s-popup-bg: var(--gnome-menu-background) !important;
+        --s-popup-fg: rgb(50, 50, 50);
+        --s-popup-border: var(--gnome-toolbar-border-color) !important;
+    }
+
+    .Tab[data-active="true"] .body {
+        box-shadow: none !important;
+        border: 1px solid var( --s-popup-border);
+    }
+
+    .CtxMenu .box {
+        appearance: none !important;
+        background: var(--gnome-menu-background) !important;
+        border: 1px solid var(--gnome-menu-border-color) !important;
+        border-radius: 12px !important;
+        box-shadow: var(--gnome-menu-shadow) !important;
+        padding: 6px !important;
+        margin: 0 !important;
+        min-height: 60px !important;
+    }
+
+    .list-group .opt[data-separator="false"] {
+        padding: 4px 12px !important;
+        min-height: 26px !important;
+    }
+}

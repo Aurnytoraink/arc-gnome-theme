@@ -1,0 +1,169 @@
+:root {
+    --page-pad: 12px;
+    --sdbr-real-wdt: 25rem;
+    /*--sdbr-real-wdt-min: 20vw;*/
+    --sdbr-real-wdt-min: var(--page-pad);
+    --hedr-hgt: 6rem;
+    --sdbr-pad: 12px;
+    --trans-dur: .35s;
+    --gnome-navbar-csd-offset: 3rem;
+    --transition: all var(--trans-dur) ease-out;
+}
+
+#TabsToolbar {
+    display: none;
+}
+
+#sidebar-header {
+    display: none;
+}
+
+#browser {
+    background: var(--gnome-toolbar-background) !important;
+}
+
+#browser > #appcontent, #nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar{
+    /* add smoothness to it */
+    transition: var(--transition) !important;
+}
+
+#sidebar-box
+{
+    position: fixed;
+    overflow: visible;
+    z-index: 2 !important;
+
+    padding: 0 !important;
+
+    height: 100vh !important;
+
+    min-width: 0px !important;
+    width: var(--sdbr-real-wdt) !important;
+
+    left: 0px;
+    top: 0px !important;
+
+    background-color: var(--gnome-toolbar-background) !important;
+    /* border-radius: 12px !important;*/
+
+}
+
+#sidebar {
+    padding: 6px 3px var(--page-pad) var(--page-pad) !important;
+    background-color: var(--gnome-toolbar-background) !important;
+}
+
+#sidebar-box, #appcontent {
+    z-index: 1 !important;
+}
+
+#sidebar-splitter {
+    display: none;
+}
+
+/* Sidebar left border corners rounded */
+:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) :is(#sidebar, #sidebar-box) {
+    border-radius: env(-moz-gtk-csd-titlebar-radius, 12px) 0 0 env(-moz-gtk-csd-titlebar-radius, 12px) !important;
+}
+
+:root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar {
+    position: relative;
+}
+
+:root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+    padding-left: 0px !important;
+    padding-right: var(--gnome-navbar-csd-offset) !important;
+}
+
+#nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar {
+    left: var(--sdbr-real-wdt);
+    width: calc(100vw - var(--sdbr-real-wdt));
+}
+
+#navigator-toolbox {
+    border: none !important;
+}
+
+/* print dialog */
+.dialogTemplate {
+    position: fixed;
+    z-index: 33333333333333;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    border-radius: 12px !important;
+}
+
+.dialogOverlay[topmost="true"]:not(.dialogOverlay-window-modal-dialog-subdialog), #window-modal-dialog::backdrop {
+    background-color: rgba(0, 0, 0, .14) !important;
+}
+
+.printDialogBox {
+    border: 1px solid var(--gnome-toolbar-border-color) !important;
+    box-shadow: 0 2px 8px 2px rgba(0,0,0,0.07),
+    0 3px 20px 10px rgba(0,0,0,0.05),
+    0 6px 32px 16px rgba(0,0,0,0.02),
+    0 0 0 1px rgba(0,0,0,0.05) !important;
+}
+
+/* if it not fullscreen video or floating window */
+#main-window:not([inDOMFullscreen="true"])[chromehidden=""]{
+
+    #browser > #appcontent {
+        margin: 3px var(--page-pad) var(--page-pad) calc(var(--page-pad) + var(--sdbr-real-wdt) ) !important;
+    }
+
+    /* if navbar is not hidden in f11 fullscreen or not only navbar is visible in f11 or window is not maximized in clean mode */
+    &:not(
+    :is(
+      :is([titlepreface*="+"], [titlepreface*="-"][titlepreface*="="])[inFullscreen="true"]),
+      [titlepreface*="?"]:is([sizemode="maximized"], [inFullscreen="true"])
+  ){
+
+        /* add rounded corners and outline to browser content */
+        #appcontent .browserSidebarContainer::after {
+            content: "";
+            border: 1px solid var(--gnome-toolbar-border-color) !important;
+            position: absolute;
+            inset: 0;
+            border-radius: var(--page-pad) !important;
+            box-shadow: 0 0 0 100px var(--gnome-toolbar-background) !important;
+            clip-path: inset(0);
+            pointer-events: none;
+        }
+    }
+
+}
+
+/* if it fullscreen no video */
+#main-window:not([inDOMFullscreen="true"])[inFullscreen="true"] {
+    #browser > #appcontent {
+        margin: var(--page-pad) var(--page-pad) var(--page-pad) calc(var(--page-pad) + var(--sdbr-real-wdt) ) !important;
+    }
+}
+
+/* if it fullscreen video */
+#main-window[inDOMFullscreen="true"] {
+    #browser > #appcontent {
+        margin: 0 !important;
+    }
+}
+
+/* if sidebar not enabled */
+#main-window:has(#sidebar-box[hidden="true"]) {
+    #browser > #appcontent {
+        margin-left: var(--page-pad)  !important;
+    }
+
+    :root[tabsintitlebar]:not([inFullscreen]) #nav-bar {
+        padding-left: 3px !important;
+        padding-right: var(--gnome-navbar-csd-offset) !important;
+    }
+
+    #nav-bar,  #PersonalToolbar {
+        left: 0;
+        width: 100vw;
+    }
+}
