@@ -6,8 +6,10 @@
 
 @import "theme/parts/video-player.css";
 
+@import "configuration/extensions/sidebery.css";
+
 /* Import a custom stylesheet
  * Everything you add in your customContent.css file (it doesn't exist by
  * default) will be included here and preserved between updates. 
  * You can apply your own custom styles in that file. */
-@import "customContent.css"; /**/
+@import "configuration/extensions/customContent.css"; /**/

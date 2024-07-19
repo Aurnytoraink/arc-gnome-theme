@@ -1,5 +1,3 @@
-/* ----------------------- SIDEBERY -------------------------- */
-
 @-moz-document regexp("^moz-extension://.*?/sidebar/sidebar.html"){
     body {
         --s-frame-bg: var(--gnome-toolbar-background) !important;
