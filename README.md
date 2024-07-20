@@ -32,12 +32,6 @@ This theme follows latest GNOME Adwaita style.
 
 This is a bunch of CSS code to make Firefox look closer to GNOME's native apps with Arc browser look in mind.
 
-### Getting in Touch
-
-Matrix room: [#firefox-gnome-theme:matrix.org](https://matrix.to/#/#firefox-gnome-theme:matrix.org)
-
-### Firefox versions support
-
 This repo is based on the upstream branch of the [Firefox GNOME theme](https://github.com/rafaelmardojai/firefox-gnome-theme)
 
 # Requirements
