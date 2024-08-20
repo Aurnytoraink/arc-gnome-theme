@@ -22,7 +22,7 @@
     background: var(--gnome-toolbar-background) !important;
 }
 
-#browser > #appcontent, #nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar{
+#browser > #appcontent, #nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck{
     /* add smoothness to it */
     transition: var(--transition) !important;
 }
@@ -66,7 +66,7 @@
     border-radius: env(-moz-gtk-csd-titlebar-radius, 12px) 0 0 env(-moz-gtk-csd-titlebar-radius, 12px) !important;
 }
 
-:root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar {
+:root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar,  #tab-notification-deck {
     position: relative;
 }
 
@@ -75,7 +75,7 @@
     padding-right: var(--gnome-navbar-csd-offset) !important;
 }
 
-#nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar {
+#nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck {
     left: var(--sdbr-real-wdt);
     width: calc(100vw - var(--sdbr-real-wdt));
 }
@@ -162,7 +162,7 @@
         padding-right: var(--gnome-navbar-csd-offset) !important;
     }
 
-    #nav-bar,  #PersonalToolbar {
+    #nav-bar,  #PersonalToolbar, #tab-notification-deck {
         left: 0;
         width: 100vw;
     }
