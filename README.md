@@ -34,6 +34,10 @@ This is a bunch of CSS code to make Firefox look closer to GNOME's native apps w
 
 This repo is based on the upstream branch of the [Firefox GNOME theme](https://github.com/rafaelmardojai/firefox-gnome-theme)
 
+# Firefox versions support
+
+The `master` branch of this repo supports the current Firefox stable release `129`.
+
 # Requirements
 
 You must apply those requierements before installing the theme.
