@@ -36,7 +36,7 @@ This repo is based on the upstream branch of the [Firefox GNOME theme](https://g
 
 # Firefox versions support
 
-The `master` branch of this repo supports the current Firefox stable release `129`.
+The `master` branch of this repo supports the current Firefox stable release `131`.
 
 # Requirements
 
