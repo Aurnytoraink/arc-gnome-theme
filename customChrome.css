@@ -22,7 +22,7 @@
     background: var(--gnome-toolbar-background) !important;
 }
 
-#browser > #appcontent, #nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck{
+#browser > #tabbrowser-tabbox, #nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar{
     /* add smoothness to it */
     transition: var(--transition) !important;
 }
@@ -66,7 +66,7 @@
     border-radius: env(-moz-gtk-csd-titlebar-radius, 12px) 0 0 env(-moz-gtk-csd-titlebar-radius, 12px) !important;
 }
 
-:root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar,  #tab-notification-deck {
+:root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck, :root[tabsintitlebar]:not([inFullscreen]) #menubar-items {
     position: relative;
 }
 
@@ -75,7 +75,7 @@
     padding-right: var(--gnome-navbar-csd-offset) !important;
 }
 
-#nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck {
+#nav-bar, :root[tabsintitlebar]:not([inFullscreen]) #PersonalToolbar, #tab-notification-deck, :root[tabsintitlebar]:not([inFullscreen]) #menubar-items {
     left: var(--sdbr-real-wdt);
     width: calc(100vw - var(--sdbr-real-wdt));
 }
@@ -111,7 +111,7 @@
 /* if it not fullscreen video or floating window */
 #main-window:not([inDOMFullscreen="true"])[chromehidden=""]{
 
-    #browser > #appcontent {
+    #browser > #tabbrowser-tabbox {
         margin: 3px var(--page-pad) var(--page-pad) calc(var(--page-pad) + var(--sdbr-real-wdt) ) !important;
     }
 
@@ -123,7 +123,7 @@
   ){
 
         /* add rounded corners and outline to browser content */
-        #appcontent .browserSidebarContainer::after {
+        #tabbrowser-tabbox .browserSidebarContainer::after {
             content: "";
             border: 1px solid var(--gnome-toolbar-border-color) !important;
             position: absolute;
@@ -139,21 +139,21 @@
 
 /* if it fullscreen no video */
 #main-window:not([inDOMFullscreen="true"])[inFullscreen="true"] {
-    #browser > #appcontent {
+    #browser > #tabbrowser-tabbox {
         margin: var(--page-pad) var(--page-pad) var(--page-pad) calc(var(--page-pad) + var(--sdbr-real-wdt) ) !important;
     }
 }
 
 /* if it fullscreen video */
 #main-window[inDOMFullscreen="true"] {
-    #browser > #appcontent {
+    #browser > #tabbrowser-tabbox {
         margin: 0 !important;
     }
 }
 
 /* if sidebar not enabled */
 #main-window:has(#sidebar-box[hidden="true"]) {
-    #browser > #appcontent {
+    #browser > #tabbrowser-tabbox {
         margin-left: var(--page-pad)  !important;
     }
 
@@ -162,7 +162,7 @@
         padding-right: var(--gnome-navbar-csd-offset) !important;
     }
 
-    #nav-bar,  #PersonalToolbar, #tab-notification-deck {
+    #nav-bar,  #PersonalToolbar, #tab-notification-deck, #menubar-items {
         left: 0;
         width: 100vw;
     }
