@@ -36,7 +36,7 @@ This repo is based on the upstream branch of the [Firefox GNOME theme](https://g
 
 # Firefox versions support
 
-The `master` branch of this repo supports the current Firefox stable release `131`.
+The `master` branch of this repo supports the current Firefox stable release `133`.
 
 # Requirements
 
@@ -127,15 +127,9 @@ Here are some examples of how to use it:
 	- Set custom profile name, for example `e0j6yb0p.default-nightly`.
 	- Default: All the profiles found in the firefox folder
 
-- `-t <theme_name>` *optional*
-	- Set the colors used in the theme.
-	- Default: Adwaita.
-	- Options: `adwaita`, `maia`.
-
-<details>
-    <summary>Advanced notes</summary>
-  
 ### Advanced notes
+<details>
+    <summary>Expand</summary>
 
 If you want to checkout the theme version tag matching you Firefox version you can run:
 
@@ -144,10 +138,10 @@ git checkout v$(firefox --version | cut -d ' ' -f 3 | cut -d '.' -f 1) # Using F
 ```
 </details>
 
-<details>
-    <summary>Manual installation</summary>
-  
+
 ## Manual installation
+<details>
+    <summary>Expand</summary>
 
 1. Go to `about:support` in Firefox.
 
@@ -236,8 +230,6 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 
 	> **Note:** You should move the new tab button out of the tabbar or it will be hidden when there is only one tab. You can rearrange the toolbars doing a right-click on any toolbar and selecting "Customize Toolbar…".
 
-	> **Note 2:** This feature doesn't work when tabs are hidden, like when using the Simple Tab Groups extension. In this case, there's no way to tell from CSS that there's only one visible tab.
-
 - **Normal width tabs** `gnomeTheme.normalWidthTabs`
 
 	Use normal width tabs as default Firefox.
@@ -297,16 +289,22 @@ Optional features can be enabled by creating new `boolean` preferences in `about
 - **OLED black theme** `gnomeTheme.oledBlack`
 
 	Change the dark theme into the black variant.
+	
+- **Show "List All Tabs" button on overflow** `gnomeTheme.allTabsButtonOnOverflow`
+
+	Show the `List All Tabs` button when the tabs bar is overflowing (when you have too many tabs that the width of the tabs no longer shrinks when new tabs are added).
 
 - **Show "List All Tabs" button** `gnomeTheme.allTabsButton`
 
 	Show the `List All Tabs` button all the time, like stock Firefox.
-	
-	> **Note:** If you like it to only show up when the tabs overflow (when you have too many tabs that the width of the tabs no longer shrinks when new tabs are added), set `browser.tabs.tabmanager.enabled` to `true` instead.
     
 - **Align tab title and icon to left** `gnomeTheme.tabAlignLeft`
 
 	Align the tab title and favicon to left of tab in place of center.
+	
+- **Bookmarks bar in fullscreen** `gnomeTheme.bookmarksOnFullscreen`
+
+	 Show the bookmarks bar while in fullscreen.
 
 ### Extensions support
 
